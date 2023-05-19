@@ -21,4 +21,4 @@ next_years = range(data.index[-1].year + 1, data.index[-1].year + 6)
 predicted_prices = model.predict(X[-5:])
 
 for year, price in zip(next_years, predicted_prices):
-    print(f"Año {year}: {int(price)}")
+    print(f"Año {year} $: {int(price)} USD")
