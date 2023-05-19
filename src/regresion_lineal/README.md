@@ -1,31 +1,19 @@
 # Análisis de Regresión Lineal
 
-Este código en Python utiliza la librería yfinance para descargar los datos de precio de cierre para Bitcoin (BTC-USD) desde Yahoo Finance. Los datos son procesados y limpiados utilizando las librerías pandas y numpy para ser usados en el entrenamiento y prueba de un modelo de regresión lineal. Finalmente, el modelo es utilizado para predecir futuros precios de Bitcoin y un gráfico de dispersión es creado para visualizar los precios predichos.
+La regresión lineal es un método estadístico utilizado para modelar la relación entre una variable dependiente y una o más variables independientes. Su objetivo es encontrar la mejor línea recta (regresión lineal simple) o el mejor hiperplano (regresión lineal múltiple) que minimice la diferencia entre los valores observados y los valores predichos por el modelo.
 
-## Librerías Utilizadas
+En la regresión lineal simple, se utiliza una variable independiente para predecir una variable dependiente. El modelo de regresión lineal simple se representa mediante la ecuación de una línea recta:
 
-- yfinance: Una librería en Python utilizada para descargar datos financieros desde Yahoo Finance.
-- pandas: Una librería en Python utilizada para la manipulación y análisis de datos.
-- numpy: Una librería en Python utilizada para computación científica.
-- sklearn.linear_model: Una librería en Python que contiene varios modelos de regresión.
-- matplotlib.pyplot: Una librería en Python utilizada para la visualización de datos.
+Y = a + bX
 
-## Preprocesamiento de los Datos
+Donde Y es la variable dependiente, X es la variable independiente, "a" es la intersección de la línea (el valor de Y cuando X es igual a cero) y "b" es la pendiente de la línea (el cambio en Y por cada unidad de cambio en X).
 
-Los datos descargados son almacenados en un dataframe de pandas y la columna 'Close' es seleccionada como variable objetivo para la predicción. La columna 'Date' es convertida a un tipo compatible con float64. Los datos son luego divididos en conjuntos de entrenamiento y prueba utilizando la librería sklearn.
+En la regresión lineal múltiple, se utilizan múltiples variables independientes para predecir una variable dependiente. El modelo de regresión lineal múltiple se representa mediante la ecuación de un hiperplano:
 
-## Entrenamiento del Modelo
+Y = a + b₁X₁ + b₂X₂ + ... + bₙXₙ
 
-Un modelo de regresión lineal es entrenado en los datos de entrenamiento utilizando el método LinearRegression() de la librería sklearn.
+Donde Y es la variable dependiente, X₁, X₂, ..., Xₙ son las variables independientes, "a" es el término de intersección y b₁, b₂, ..., bₙ son los coeficientes que indican cómo influye cada variable independiente en la variable dependiente.
 
-## Prueba del Modelo
+El objetivo de la regresión lineal es encontrar los valores óptimos de los coeficientes (a y b en la regresión lineal simple, y a, b₁, b₂, ..., bₙ en la regresión lineal múltiple) que minimicen la diferencia entre los valores observados y los valores predichos por el modelo. Esto se logra utilizando métodos de estimación como el método de mínimos cuadrados.
 
-El modelo es probado en los datos de prueba y los precios predichos son almacenados en la variable 'y_pred'.
-
-## Visualización de los Datos
-
-Un gráfico de dispersión es creado para visualizar los precios predichos. Los datos de entrenamiento y prueba son graficados en colores azul y verde respectivamente y los precios predichos son graficados como una línea roja.
-
-## Cómo Utilizar
-
-Para utilizar este código, simplemente copie y pegue en un ambiente de Python, como Jupyter Notebook o Spyder. Asegúrese de instalar las librerías requeridas antes de ejecutar el código. Puede cambiar la variable 'symbol' para analizar diferentes activos financieros y ajustar las fechas 'start' y 'end' para modificar el período de tiempo de los datos.
+La regresión lineal es ampliamente utilizada en estadística, econometría y otras disciplinas para analizar y predecir relaciones entre variables continuas. Además de su simplicidad y facilidad de interpretación, la regresión lineal también puede proporcionar información sobre la fuerza y dirección de la relación entre las variables. Sin embargo, es importante tener en cuenta las suposiciones y limitaciones de la regresión lineal al aplicarla a conjuntos de datos y realizar inferencias.
